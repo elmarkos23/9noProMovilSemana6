@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Estudiante"
-             Title="Estudiante">
+             Title="Estudiante"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
       <Label Text="Codigo"/>
@@ -14,6 +15,7 @@
       <Label Text="Edad"/>
       <Entry x:Name="txtEdad" Keyboard="Numeric"/>
       <Button x:Name="btnGrabar" Clicked="Grabar_Clicked"/>
+      <Button x:Name="btnRegresar" Text="Regresar" Clicked="Regresar_Clicked"/>
     </StackLayout>
     </ContentPage.Content>
 </ContentPage>

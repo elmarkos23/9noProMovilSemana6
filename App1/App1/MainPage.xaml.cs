@@ -86,14 +86,12 @@ namespace App1
         var response = Client.DeleteAsync("http://192.168.100.32:81/moviles/post.php?codigo=" + codigo).Result;
         if (response.IsSuccessStatusCode)
         {
-          string PlacesJson = response.Content.ReadAsStringAsync().Result;
           resultado = true;
         }
         else
         {
           // resultado diferente de 200 o succesfull
         }
-
       }
       catch (Exception ex)
       {
@@ -112,6 +110,11 @@ namespace App1
       {
         await DisplayAlert("Error", "Seleccione un estudiante", "Aceptar");
       }
+    }
+
+    private void Consultar_Clicked(object sender, EventArgs e)
+    {
+      Select();
     }
   }
 }

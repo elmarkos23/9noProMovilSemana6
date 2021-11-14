@@ -50,21 +50,28 @@ namespace App1
         estudiante.nombre = txtNombre.Text;
         estudiante.apellido = txtApellido.Text;
         estudiante.edad = Convert.ToInt32(txtEdad.Text);
-        Insertar(estudiante);
-        await Navigation.PopAsync();
+        if (Insertar(estudiante))
+        {
+          await DisplayAlert("Mensaje","Estudiante insertado","Aceptar");
+        }
+        
       }
       else//actualizar
       {
         estudiante.nombre = txtNombre.Text;
         estudiante.apellido = txtApellido.Text;
         estudiante.edad = Convert.ToInt32(txtEdad.Text);
-        ActualizarUsuario(estudiante);
-        await Navigation.PopAsync();
+        if (ActualizarUsuario(estudiante))
+        {
+          await DisplayAlert("Mensaje", "Estudiante actualizado", "Aceptar");
+        }
+
+        
       }
     }
-    public int Insertar(Modelo.Estudiante estudiante)
+    public bool Insertar(Modelo.Estudiante estudiante)
     {
-      int resultado = 0;
+      bool resultado = false;
       try
       {
         var Client = new HttpClient();
@@ -114,6 +121,11 @@ namespace App1
         //error
       }
       return resultado;
+    }
+
+    private async void Regresar_Clicked(object sender, EventArgs e)
+    {
+      await Navigation.PopAsync();
     }
   }
 }

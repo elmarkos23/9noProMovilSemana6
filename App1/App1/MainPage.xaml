@@ -33,9 +33,10 @@
       </ListView>
     </ScrollView>
     <Grid VerticalOptions="End">
-      <Button Grid.Row="0" Grid.Column="0" Text="Insertar" Clicked="Insertar_Clicked"/>
-      <Button Grid.Row="0" Grid.Column="1" Text="Actualizar" Clicked="Actualizar_Clicked"/>
-      <Button Grid.Row="0" Grid.Column="2" Text="Eliminar" Clicked="Eliminar_Clicked"/>
+      <Button Grid.Row="0" Grid.Column="0" Text="Consultar" Clicked="Consultar_Clicked"/>
+      <Button Grid.Row="0" Grid.Column="1" Text="Insertar" Clicked="Insertar_Clicked"/>
+      <Button Grid.Row="0" Grid.Column="2" Text="Actualizar" Clicked="Actualizar_Clicked"/>
+      <Button Grid.Row="0" Grid.Column="3" Text="Eliminar" Clicked="Eliminar_Clicked"/>
     </Grid>
   </StackLayout>
 
