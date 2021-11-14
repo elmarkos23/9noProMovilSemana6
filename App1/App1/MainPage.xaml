@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MainPage">
+
+    <StackLayout VerticalOptions="Start">
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Estudiante Rest API!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+    <ScrollView VerticalOptions="FillAndExpand">
+      <ListView x:Name="lvDatos" SelectionMode="Single" >
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="{Binding codigo}"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding nombre}"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="{Binding apellido}"/>
+                <Label Grid.Row="0" Grid.Column="3"  Text="{Binding edad}"/>
+              </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </ScrollView>
+    <Grid VerticalOptions="End">
+      <Button Grid.Row="0" Grid.Column="0" Text="Insertar" Clicked="Insertar_Clicked"/>
+      <Button Grid.Row="0" Grid.Column="1" Text="Actualizar" Clicked="Actualizar_Clicked"/>
+      <Button Grid.Row="0" Grid.Column="2" Text="Eliminar" Clicked="Eliminar_Clicked"/>
+    </Grid>
+  </StackLayout>
+
+</ContentPage>
